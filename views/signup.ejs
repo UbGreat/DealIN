@@ -1,0 +1,37 @@
+
+
+
+
+<section ng-app="dealIN" ng-controller="signupPageController" class="container">
+  <div class="row">
+    <div class="col-md-6 home-git">
+      
+
+    </div>
+    <div class="col-md-6 contact-form">
+        <h2 class="text-center">SIGN UP</h2>
+        <form ng-submit="submitSignupForm()" novalidate id="sign-up-form" class="form-signup" name="signup">
+          <select ng-model="signupForm.role" name="role" class="form-control" >
+            <option value="">
+              Select Your role:
+            </option>
+            <option value="customer">
+              Customer
+            </option>
+            <option value="merchant">
+              Merchant
+            </option>
+          </select>
+          <input type="text" ng-model="signupForm.phoneno" name="phoneno" placeholder="Enter Phone no:" class="form-control">
+          <input type="text" ng-model="signupForm.password" name="password" placeholder="Enter Password:" class="form-control">
+          <input type="text" ng-model="signupForm.confirmPassword" name="confirmPassword" placeholder="Confirm Password:" class="form-control">
+           <input type="submit" ng-click="submit()"  class="btn btn-block btn-primary" value="Sign Up">
+        </form>
+        </div>
+        {{name}}
+  </div>
+</section>
+  
+
+    
+  </div> <!-- /container -->

@@ -13,10 +13,10 @@ module.exports = {
     signup: function(req, res){
       
         var me = {};
-        me.username = req.param('username');
-        me.password = req.param('password');
-        me.email = req.param('email');
-        var usersRef = admin.database().ref().child('users').key;
+        me.businessName = "fivefingers";//req.param('businessname');
+        me.category = "resturant" //req.param('category');
+        me.email = "fivefingers@gmail.com" //req.param('email');
+        var usersRef = admin.database().ref().child('business').key;
 
         User.create(me).exec(function(err, createdUser){
             if(err){

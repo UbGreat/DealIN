@@ -2,75 +2,70 @@
  * User.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
- * @docs        :: http://sailsjs.org/#!documentation/models
+ * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
   
     attributes: {
-      
-      phoneno: {
-        type: 'string',
-        unique: 'true'
+      firstName: {
+        type: 'string'
       },
-  
+      lastName: {
+        type: 'string'
+      },
+      username:{
+        type: 'string',
+        unique: true
+      },
       email: {
         type: 'string',
-        email: 'true',
-        unique: 'true'
+        email: true,
+        unique: true,
+        required: true
       },
-  
-      username: {
+      password: {
         type: 'string',
-        unique: 'true'
+        required: true
       },
-  
-      encryptedPassword: {
+      phoneNo: {
         type: 'string'
       },
   
-      deleted: {
-        type: 'boolean'
-      },
-  
-      admin: {
-        type: 'boolean'
-      },
-      endUser: {
-        type: 'boolean'
-      },
-      merchant: {
-        type: 'boolean'
+      role: {
+        type: 'string',
+       // enum: ['dealinSuperAdmin', 'dealinAdmin','merchant', 'staffMember', 'customer']
       },
   
       banned: {
         type: 'boolean'
       },
   
-      passwordRecoveryToken: {
-        type: 'string'
+      deleted: {
+        type: 'boolean'
       },
   
-      
-  
-     /* loyaltyCard: {
-        collection: 'loyaltyCard',
-        via: 'owner'
+      business: {
+        collection: 'business',
+        via: 'merchant'
       },
-  
-      ratings: {
-        collection: 'rating',
-        via: 'byUser'
+      sentNotification: {
+        collection: 'notification',
+        via:'sender'
       },
-
-      */
-  
+      receivedNotification: {
+        collection: 'notification',
+        via:'receipients'
+      },
+      dailyActivity: {
+        collection: 'activity',
+        via: 'user'
+      },
       toJSON: function() {
         var obj = this.toObject();
-        //delete obj.password;
-        delete obj.confirmation;
-        delete obj.encryptedPassword;
         return obj;
-      }
     }
+  }
   };
+  
+  

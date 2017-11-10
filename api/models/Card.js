@@ -1,5 +1,5 @@
 /**
- * Deal.js
+ * Card.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
@@ -8,20 +8,24 @@
 module.exports = {
   
     attributes: {
-      dealName: {
+      cardName: {
         type: 'string'
       },
       description: {
         type: 'string'
       },
-      miles: {
+      category: {
+        //could be silver, gold or diamond
         type: 'string'
       },
-      expiryDate: {
-        type: 'string'
+      maxPunch: {
+        type: 'integer'
       },
-      business: {
-        model: 'business'
+      club: {
+        model: 'club'
+      },
+      reward: {
+        model: 'reward'
       }
     }
   };

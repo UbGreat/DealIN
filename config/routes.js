@@ -32,16 +32,11 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'GET /': 'PageController.welcome',
-  'GET /signup': 'PageController.signup',
-  'GET /signin': 'PageController.signin',
-  'GET /home': 'PageController.home',
-  'GET /user/all': 'UserController.allUsers',
-  'GET /user/merchants': 'UserController.findAllMerchants',
-  'GET /user/customers': 'UserController.findAllMerchants',
-  'GET /user/byphone': 'UserController.findByPhone',
- // 'PUT /login': 'UserController.login',
-  'POST /user/signup': 'UserController.signup'
+  '/': {
+    view: 'homepage'
+  },
+  'GET /signup': 'UserController.signup',
+  // 'GET /business': 'BusinessController.allBusinesses'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

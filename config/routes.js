@@ -35,7 +35,8 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  'GET /signup': 'UserController.signup',
+  'GET /user/signup': 'UserController.signup',
+  'GET /business/register': 'BusinessController.register',
   // 'GET /business': 'BusinessController.allBusinesses'
   /***************************************************************************
   *                                                                          *

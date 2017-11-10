@@ -10,19 +10,19 @@ var firebase = require('./helpers/firebase');
 
 module.exports = {
    
-    signup: function(req, res){
+    register: function(req, res){
       
         var me = {};
-        me.businessName = "fivefingers";//req.param('businessname');
-        me.category = "resturant" //req.param('category');
-        me.email = "fivefingers@gmail.com" //req.param('email');
+        me.businessName = req.param('businessname');
+        me.category = req.param('category');
+        me.email = req.param('email');
         var usersRef = admin.database().ref().child('business').key;
 
-        User.create(me).exec(function(err, createdUser){
+        Business.create(me).exec(function(err, registerBusiness){
             if(err){
                 return res.negotiate(err);
             }
-            return res.json(createdUser);
+            return res.json(registerBusiness);
         });
         
         
